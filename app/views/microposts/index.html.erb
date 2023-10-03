@@ -1,0 +1,12 @@
+<h1>Microposts</h1>
+
+<div id="microposts">
+  <% @microposts.each do |micropost| %>
+    <%= render micropost %>
+    <p>
+      <%= link_to "Show this user", user_path(micropost.user_id) %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user", new_user_path %>

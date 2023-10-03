@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "users#index"
+  
+  get "post", to: "microposts#new"
+  post "post", to: "microposts#create"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "allpost", to: "microposts#index"
+
+  resources :users do
+    member do 
+      get 'post', to: 'microposts#new'
+    end
+  end
+  resources :microposts
 end
