@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  root "users#index"
+  root  'pages#home'
+
+  get   'signup',    to: "users#new"
+  post  'signup',    to: "users#create"
+
+  get    "login",   to: "sessions#new"
+  post   "login",   to: "sessions#create"
+  delete "logout",  to: "sessions#destroy"
   
-  get "post", to: "microposts#new"
-  post "post", to: "microposts#create"
+  get    "post",     to: "microposts#new"
+  post   "post",     to: "microposts#create"
 
   get "allpost", to: "microposts#index"
+
 
   resources :users do
     member do 
