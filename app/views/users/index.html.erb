@@ -6,8 +6,12 @@
   <% @users.each do |user| %>
     <%= render user %>
     <p>
-      <%= link_to "Show this user", user_path(user) %> | 
-
+      <%= link_to "Show this user", user_path(user) %> |
+      <% if current_user.following?(user) %>
+        <%= button_to "UNfollow this user", {controller: 'relationships', action: 'destroy', id: user.id}, method: :delete %>
+      <% else %>
+        <%= button_to "follow this user", {controller: 'relationships', action: 'create', id: user.id} %>
+    <% end %>
     </p>
   <% end %>
 </div>

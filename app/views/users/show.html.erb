@@ -15,9 +15,12 @@
 </section>
 
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <% if log_in?(@user) %>
+    <%= link_to "Edit this user", edit_user_path(@user) %> |
+    <%= link_to "New post", post_user_path %>
+    <%= button_to "Logout", logout_path, method: :delete %>
+    <%= button_to "Destroy this user", @user, method: :delete %>
+  <% end %>
   <%= link_to "Back to users", users_path %> |
-  <%= link_to "New post", post_user_path %>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
 </div>

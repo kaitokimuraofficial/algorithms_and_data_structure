@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get "allpost", to: "microposts#index"
 
+  
 
   resources :users do
     member do 

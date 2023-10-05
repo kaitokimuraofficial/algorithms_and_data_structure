@@ -1,0 +1,18 @@
+<% @user.followers.each do |follower| %>
+    <p>
+    <%= follower.id %>
+    <%= follower.name %>
+    <% if current_user.following?(follower) %>
+        <%= link_to "Show this user", user_path(follower) %>
+        <%= button_to "UNfollow this user", {controller: 'relationships', action: 'destroy', id: follower.id}, method: :delete %>
+    <% else %>
+        <% if current_user != follower %>
+        <%= button_to "follow this user", {controller: 'relationships', action: 'create', id: follower.id} %>
+        <% end %>
+    <% end %>
+    </p>
+<% end %>
+
+<p>
+    <%= link_to "Back to Users", users_path %>
+</p>

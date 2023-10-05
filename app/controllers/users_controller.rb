@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     @user = User.find(params[:id])
-    if log_in?(@user)
+    if current_user.following?(@user) or log_in?(@user)
       @microposts = @user.microposts
     else
       redirect_to root_url
@@ -64,8 +64,14 @@ class UsersController < ApplicationController
   end
 
   def following
-    logger.debug(params)
+    logger.debug(params[:id])
+    @user = User.find(params[:id])
   end
+
+  def followers
+    @user = User.find(params[:id])
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

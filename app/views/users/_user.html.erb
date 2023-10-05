@@ -4,9 +4,11 @@
     <%= user.name %>
   </p>
 
+  <% if log_in?(user) or current_user.following?(user) %>
   <p>
     <strong>Email:</strong>
     <%= user.email %>
   </p>
+  <% end %>
 
 </div>
