@@ -14,13 +14,14 @@ Rails.application.routes.draw do
   get "allpost", to: "microposts#index"
 
   
-
   resources :users do
     member do 
       get 'post', to: 'microposts#new'
       get :following, :followers
     end
   end
+  
+  resources :users
   resources :microposts
   resources :relationships,  only: [:create, :destroy]
 end
