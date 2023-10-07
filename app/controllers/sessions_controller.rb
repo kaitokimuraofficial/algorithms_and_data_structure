@@ -3,10 +3,15 @@ class SessionsController < ApplicationController
   end
 
   def create
+    logger.debug(params)
     user = User.find_by(email: params[:session][:email].downcase)
     reset_session 
-    log_in user
-    redirect_to user
+    if user.nil?
+      redirect_to signup_url
+    else
+      log_in user
+      redirect_to user
+    end
 
 
   end
