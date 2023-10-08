@@ -1,0 +1,16 @@
+.users-profile-inner {
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 1rem;
+    margin: 2rem;
+    margin-left: 3rem;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.users-profile-button {
+    text-align: center;
+    justify-content: center;
+}

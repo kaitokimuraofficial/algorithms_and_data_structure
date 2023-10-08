@@ -1,26 +1,18 @@
 <p style="color: green"><%= notice %></p>
+<%= stylesheet_link_tag 'common/users/show', media: 'all' %>
 
-<%= render @user %>
+<div class="user-page-inner">
+  <div class="users-profile-wrapper">
+    <%= render @user %>
+  </div>
 
-<% if @microposts.empty? %>
-  <p>No data</p>
-<% else %>
-  <% @microposts.each do |micropost| %>
-    <%= render micropost %>
-  <% end%>
-<% end %>
-
-<section class="stats">
-  <%= render 'shared/stats' %>
-</section>
-
-<div>
-  <% if log_in?(@user) %>
-    <%= link_to "Edit this user", edit_user_path(@user) %> |
-    <%= link_to "New post", post_user_path %>
-    <%= button_to "Logout", logout_path, method: :delete %>
-    <%= button_to "Destroy this user", @user, method: :delete %>
-  <% end %>
-  <%= link_to "Back to users", users_path %> |
-
+  <div class="users-posts-wrapper">
+    <% if @microposts.empty? %>
+      <p>No data</p>
+    <% else %>
+      <% @microposts.each do |micropost| %>
+        <%= render micropost %>
+      <% end%>
+    <% end %>
+  </div>
 </div>

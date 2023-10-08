@@ -1,0 +1,36 @@
+.header-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.header-title {
+    margin-left: 1rem;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+
+.header-nav-inner {
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.nav-rightpath {
+    color: gray;
+    padding: 5px;
+}
+
+.nav-leftpath {
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(93, 124, 93);
+}

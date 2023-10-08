@@ -1,0 +1,14 @@
+.user-page-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.users-profile-wrapper {
+    flex: 1;
+}
+
+.users-posts-wrapper {
+    flex: 2;
+}

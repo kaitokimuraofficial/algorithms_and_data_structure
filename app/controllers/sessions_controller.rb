@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to signup_url
     else
       log_in user
-      redirect_to user
+      redirect_to root_url
     end
 
 
