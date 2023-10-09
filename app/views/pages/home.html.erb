@@ -1,3 +1,7 @@
-<p>
-    HOMEHOMEHOMEHOME
-</p>
+<% if current_user.nil? %>
+    <p>No user Logged in</p>
+<% else %>
+    <% @microposts.each do |micropost| %>
+        <%= render "shared/micropost", micropost: micropost %>
+    <% end %>
+<% end %>

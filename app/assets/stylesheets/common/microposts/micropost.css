@@ -1,0 +1,12 @@
+.microposts-writer-inner {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    margin: 1rem;
+
+    width: 200px;
+}

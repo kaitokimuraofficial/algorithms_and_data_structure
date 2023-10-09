@@ -11,7 +11,7 @@
       <p>No data</p>
     <% else %>
       <% @microposts.each do |micropost| %>
-        <%= render micropost %>
+        <%= render "shared/micropost", micropost: micropost %>
       <% end%>
     <% end %>
   </div>
