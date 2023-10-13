@@ -2,16 +2,14 @@
 
 <div class="microposts-writer-inner">
     <div class="microposts-writer-name">
-        <p>
-            <strong>Content:</strong>
+        <p class="micropost-content">
             <%= micropost.content %>
         </p>
     </div>
 
     <div class="microposts-content">
-        <p>
-            <strong>user_id:</strong>
-            <%= micropost.user_id %>
+        <p class="micropost-writer">
+            <%= user_id_to_name(micropost.user_id) %>
         </p>
     </div>
 

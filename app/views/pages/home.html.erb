@@ -1,7 +1,15 @@
-<% if current_user.nil? %>
-    <p>No user Logged in</p>
-<% else %>
-    <% @microposts.each do |micropost| %>
-        <%= render "shared/micropost", micropost: micropost %>
+<%= stylesheet_link_tag 'common/page/home', media: 'all' %>
+
+<div class="page-home-inner">
+    <% if current_user.nil? %>
+        <p>No user Logged in</p>
+    <% else %>
+        <div class="home-micropost-wrapper">
+            <% @microposts.each do |micropost| %>
+                <div class="home-micropost-inner">
+                    <%= render "shared/micropost", micropost: micropost %>
+                </div>
+            <% end %>
+        </div>
     <% end %>
-<% end %>
+</div>

@@ -1,0 +1,16 @@
+.page-home-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-micropost-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.home-micropost-inner {
+    margin-right: 10px;
+}
+  
