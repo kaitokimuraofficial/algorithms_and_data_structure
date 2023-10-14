@@ -10,6 +10,14 @@
 
 }
 
+.user-profile-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .users-profile-button {
     text-align: center;
     justify-content: center;

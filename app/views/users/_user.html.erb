@@ -1,7 +1,11 @@
 <%= stylesheet_link_tag 'common/users/user', media: 'all' %>
 
 <div class="users-profile-inner">
-  <p>
+  <div class="user-profile-image">
+    <%= image_tag user.get_image, :size => '200x100' %>
+  </div>
+
+  <p class="user-profile-name">
     <strong>Name:</strong>
     <%= user.name %>
   </p>
