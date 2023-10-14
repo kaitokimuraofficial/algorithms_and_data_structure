@@ -16,7 +16,7 @@
 
   <div class="users-profile-button">
     <% if current_user == @user %>
-      <%= button_to "Edit this user", edit_user_path(@user), class:"mybutton" %>
+      <%= button_to "Edit this user", {controller: 'users', action: 'edit', id: @user.id}, method: :get, class:"mybutton" %>
     <% else %>
       <% if current_user.following?(user) %>
         <%= button_to "UNfollow this user", {controller: 'relationships', action: 'destroy', id: user.id}, method: :delete, class: "mybutton" %>
