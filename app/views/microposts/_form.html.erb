@@ -1,6 +1,10 @@
 <%= form_with(model: micropost) do |form| %>
 
   <div>
+    <%= form.file_field :image, accept: "image/*" %>
+  </div>
+  
+  <div>
     <%= form.label :content, style: "display: block" %>
     <%= form.text_field :content %>
   </div>
