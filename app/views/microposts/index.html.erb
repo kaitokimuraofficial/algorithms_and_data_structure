@@ -2,7 +2,7 @@
 
 <div id="microposts">
   <% @microposts.each do |micropost| %>
-    <%= render micropost %>
+    <%= render 'shared/micropost', micropost: micropost %>
     <p>
       <%= link_to "Show this user", user_path(micropost.user_id) %>
     </p>

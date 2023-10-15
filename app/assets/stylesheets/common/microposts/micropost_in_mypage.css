@@ -4,10 +4,9 @@
 
     padding: 1rem;
 
-
     margin: 1rem;
 
-    width: 500px;
+    width: 550px;
 }
 
 .micropost-info {
@@ -33,4 +32,14 @@
 .micropost-writer {
     font-size: 14px;
     color: rgb(166, 162, 162);
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }

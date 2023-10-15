@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag 'common/microposts/micropost', media: 'all' %>
 
+<%= link_to micropost_path(micropost.id) do %>
 <div class="microposts-writer-inner">
     <div class="micropost-image">
         <%= image_tag micropost.get_mp_image, :size => '200x100' %>
@@ -16,5 +17,5 @@
             <%= user_id_to_name(micropost.user_id) %>
         </p>
     </div>
-
+<% end %>
 </div>
