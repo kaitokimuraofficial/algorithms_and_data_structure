@@ -36,6 +36,7 @@ end
 
 gem 'graphql'
 gem 'graphiql-rails'
+gem 'sass-rails'
 
 group :development do
   gem "web-console"

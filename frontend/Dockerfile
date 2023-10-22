@@ -1,1 +1,1 @@
-FROM ubutu:latest
+FROM ubuntu:latest
