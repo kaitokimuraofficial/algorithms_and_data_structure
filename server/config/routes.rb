@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
+  
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end
   
-  post "/graphql", to: "graphql#execute"
   root  'pages#home'
 
-  get   'signup',    to: "users#new"
-  post  'signup',    to: "users#create"
+  post  'graphiql',  to: 'graphql#execute'
 
-  get    "login",    to: "sessions#new"
-  post   "login",    to: "sessions#create"
-  get    "logout",   to: "sessions#destroy"
+  get   'signup',    to: 'users#new'
+  post  'signup',    to: 'users#create'
+
+  get    'login',    to: 'sessions#new'
+  post   'login',    to: 'sessions#create'
+  get    'logout',   to: 'sessions#destroy'
   
-  get    "allpost",  to: "microposts#index"
+  get    'allpost',  to: 'microposts#index'
 
   
   resources :users do
