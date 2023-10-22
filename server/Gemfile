@@ -35,9 +35,11 @@ group :development, :test do
 end
 
 gem 'graphql'
+gem 'graphiql-rails'
 
 group :development do
   gem "web-console"
+  gem 'sass-rails'
   gem 'graphiql-rails'
 
 end
