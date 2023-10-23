@@ -8,3 +8,11 @@ services:
       RAILS_ENV: development
     ports:
       - 3000:3000
+
+  frontend:
+    build: ./frontend
+    command: sh -c "PORT=3001 npm start"
+    environment:
+      TZ: Asia/Tokyo
+    ports:
+      - 3001:3001
