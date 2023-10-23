@@ -27,5 +27,19 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :user, Types::UserType, null: true do
+      description "Find User by ID" #省略可
+      argument :id, ID, required: true
+    end
+
+    # 実行のコマンド(リゾルバ)を書きます
+    def user(id:)
+      User.find(id)
+    end
+
+    def users(page: nil, items: nil)
+      User.all
+    end
   end
 end

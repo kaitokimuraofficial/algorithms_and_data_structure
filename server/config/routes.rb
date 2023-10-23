@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   root  'pages#home'
 
-  post  'graphiql',  to: 'graphql#execute'
+  post  'graphql',  to: 'graphql#execute'
 
   get   'signup',    to: 'users#new'
   post  'signup',    to: 'users#create'

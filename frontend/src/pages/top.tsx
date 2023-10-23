@@ -3,9 +3,7 @@ import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 
 const TEST = gql`
-  query test {
-    testField
-  }
+
 `;
 
 export default function Top() {

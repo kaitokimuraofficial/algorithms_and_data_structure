@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 );
 
 const client = new ApolloClient({
-  uri: 'http://0.0.0.0:3000/graphql',
+  uri: 'http://0.0.0.0:3000/graphiql',
   cache: new InMemoryCache(),
 });
 
