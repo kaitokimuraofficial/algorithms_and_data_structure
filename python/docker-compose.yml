@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  python:
+    container_name: algo_and_data_structure
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+    volumes:
+      - ./src:/src
