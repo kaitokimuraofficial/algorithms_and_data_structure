@@ -3,39 +3,51 @@ extern "C" {
 }
 
 #include <gtest/gtest.h>
+#include <string>
 
-TEST(NodeTest, LEN1) {
+TEST(NodeTest, onlyHead) {
     Node *head = NULL;
 
-    insertAtEnd(&head, 10);
-    insertAtEnd(&head, 11);
-
-    insertAtBeginning(&head, 2);
-
-    EXPECT_EQ(len(head), 3);
+    EXPECT_EQ(len(head), 0);
+    testing::internal::CaptureStdout();
+    print(head);
+    EXPECT_EQ(testing::internal::GetCapturedStdout(), "Head is NULL\n");
 }
 
-TEST(NodeTest, LEN2) {
+TEST(NodeTest, insertAndDelete) {
     Node *head = NULL;
 
     insertAtEnd(&head, 10);
     insertAtEnd(&head, 11);
 
-    insertAtBeginning(&head, 2);
+    EXPECT_EQ(len(head), 2);
+    testing::internal::CaptureStdout();
+    print(head);
+    EXPECT_EQ(testing::internal::GetCapturedStdout(), "10 -> 11\n");
 
-    EXPECT_EQ(len(head), 3);
-}
-
-
-TEST(NodeTest, LEN3) {
-    Node *head = NULL;
-
-    insertAtEnd(&head, 10);
-    insertAtEnd(&head, 11);
 
     insertAtBeginning(&head, 2);
 
     EXPECT_EQ(len(head), 3);
+    testing::internal::CaptureStdout();
+    print(head);
+    EXPECT_EQ(testing::internal::GetCapturedStdout(), "2 -> 10 -> 11\n");
+
+
+    insertAtIndex(&head, 100, 1);
+
+    EXPECT_EQ(len(head), 4);
+    testing::internal::CaptureStdout();
+    print(head);
+    EXPECT_EQ(testing::internal::GetCapturedStdout(), "2 -> 100 -> 10 -> 11\n");
+
+
+    deleteAtIndex(&head, 1);
+
+    EXPECT_EQ(len(head), 3);
+    testing::internal::CaptureStdout();
+    print(head);
+    EXPECT_EQ(testing::internal::GetCapturedStdout(), "2 -> 10 -> 11\n");
 }
 
 
