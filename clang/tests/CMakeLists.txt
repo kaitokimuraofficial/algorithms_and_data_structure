@@ -46,5 +46,16 @@ target_link_libraries(
   GTest::gtest_main
 )
 
+add_executable(
+  doubly-linked-list-test
+  doubly-linked-list-test.cc
+  ../src/doubly-linked-list.c 
+)
+target_link_libraries(
+  doubly-linked-list-test
+  GTest::gtest_main
+)
+
 include(GoogleTest)
 gtest_discover_tests(singly-linked-list-test)
+gtest_discover_tests(doubly-linked-list-test)
