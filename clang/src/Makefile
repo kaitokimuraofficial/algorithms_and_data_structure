@@ -1,4 +1,3 @@
-
 singlylist:		main.o node.o
 				gcc main.o node.o && ./a.out
 
