@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "node.h"
+#include "singly-linked-list.h"
 
 
 // create new node
@@ -100,7 +100,7 @@ int insertAtIndex(Node** head, int data, int index) {
 
     newNode->next = temp->next;
     temp->next = newNode;
-    
+
     return 0;
 }
 
@@ -128,9 +128,9 @@ int deleteTail(Node** head) {
     }
 
     while (temp->next->next != NULL) {
-        free(temp->next);
         temp = temp->next;
     }
+    free(temp->next);
     temp->next = NULL;
 
     return 0;

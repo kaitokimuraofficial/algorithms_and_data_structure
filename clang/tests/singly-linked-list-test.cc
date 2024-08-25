@@ -1,5 +1,5 @@
 extern "C" {
-#include "../src/node.h"
+#include "../src/singly-linked-list.h"
 }
 
 #include <gtest/gtest.h>

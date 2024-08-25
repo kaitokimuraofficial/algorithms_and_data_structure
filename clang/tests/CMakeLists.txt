@@ -37,14 +37,14 @@ enable_testing()
 
 
 add_executable(
-  node_test
-  node_test.cc
-  ../src/node.c 
+  singly-linked-list-test
+  singly-linked-list-test.cc
+  ../src/singly-linked-list.c 
 )
 target_link_libraries(
-  node_test
+  singly-linked-list-test
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(node_test)
+gtest_discover_tests(singly-linked-list-test)
