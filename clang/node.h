@@ -11,23 +11,25 @@
 //------------------------------------------------
 //  Type Definition
 //------------------------------------------------
-struct node {
+
+typedef struct node {
     int data;
     struct node *next;
-};
-
-typedef struct node *NodePtr;
+} Node;
 
 //------------------------------------------------
 //  Prototype Declaration
 //------------------------------------------------
-NodePtr createNode(int data);
-void insertAtBeginning(NodePtr* head, int data);
-void insertAtEnd(NodePtr* tail, int data);
-void insertAtIndex(NodePtr* head, NodePtr* node, int index);
-void deleteHeadNode(NodePtr* head);
-void deleteTailNode(NodePtr* tail);
-void deleteNodeWithKey(NodePtr* head, int key);
+Node* createNode(int data);
+int len(Node* head);
+void print(Node* head);
+
+int insertAtBeginning(Node** head, int data);
+int insertAtEnd(Node** head, int data);
+int insertAtIndex(Node** head, int data, int index);
+int deleteHead(Node** head);
+int deleteTail(Node** head);
+int deleteAtIndex(Node** head, int index);
 
 //------------------------------------------------
 #endif
