@@ -24,6 +24,6 @@ RUN cmake -S . -B build
 
 RUN cmake --build build
 
-RUN cd build && ctest
+RUN cd build && ctest --output-on-failure
 
 CMD ["/bin/bash"]
