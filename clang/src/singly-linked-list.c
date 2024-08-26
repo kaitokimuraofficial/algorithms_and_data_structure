@@ -14,8 +14,8 @@ Node* createNode(int data) {
 }
 
 // return length of linked list
-// length of linked list of only head node is 1.
-// length of HEAD -> 3 -> 5 -> NULL is 3.
+// length of linked list of only head node is 0.
+// length of HEAD -> 3 -> 5 -> NULL is 2.
 int len(Node* head) {
     int length = 0;
     Node *temp = head;
@@ -24,7 +24,6 @@ int len(Node* head) {
         length ++;
         temp = temp->next;
     }
-    free(temp);
 
     return length;
 }
@@ -45,7 +44,6 @@ void print(Node* head) {
         temp = temp->next;
     }
     printf("\n");
-    free(temp);
 
     return;
 }
@@ -155,6 +153,8 @@ int deleteAtIndex(Node** head, int index) {
 
     if (temp == NULL) return -1;
 
-    temp->next = temp->next->next;
+    Node *t = temp->next;
+    temp->next = t->next;
+    free(t);
     return 0;
 }
