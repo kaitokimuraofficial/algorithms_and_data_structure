@@ -56,6 +56,18 @@ target_link_libraries(
   GTest::gtest_main
 )
 
+add_executable(
+  stack-test
+  stack-test.cc
+  ../src/stack.c
+  ../src/singly-linked-list.c
+)
+target_link_libraries(
+  stack-test
+  GTest::gtest_main
+)
+
 include(GoogleTest)
 gtest_discover_tests(singly-linked-list-test)
 gtest_discover_tests(doubly-linked-list-test)
+gtest_discover_tests(stack-test)
