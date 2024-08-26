@@ -67,7 +67,19 @@ target_link_libraries(
   GTest::gtest_main
 )
 
+add_executable(
+  queue-test
+  queue-test.cc
+  ../src/queue.c
+  ../src/singly-linked-list.c
+)
+target_link_libraries(
+  queue-test
+  GTest::gtest_main
+)
+
 include(GoogleTest)
 gtest_discover_tests(singly-linked-list-test)
 gtest_discover_tests(doubly-linked-list-test)
 gtest_discover_tests(stack-test)
+gtest_discover_tests(queue-test)
