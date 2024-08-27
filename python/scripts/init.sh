@@ -16,7 +16,7 @@ install_package() {
 
 install_package "build-essential" "sudo apt-get install -y build-essential"
 install_package "pip" "pip install --upgrade pip"
-install_package "diagrams" "pip install diagrams"
+install_package "requirements.txt" "pip install -r requirements.txt"
 
 echo "Setup completed successfully."
 
