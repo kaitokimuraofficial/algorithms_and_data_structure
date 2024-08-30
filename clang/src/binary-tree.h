@@ -39,9 +39,9 @@ void inOrderTraversal(Node* root);
 void postOrder(Node* root, int* isFirst);
 void postOrderTraversal(Node* root);
 
-int insertNode(Node** tree, int data);
-int deleteNode(Node** tree, int data);
-int searchNode(Node* tree, int data);
+int insertNode(Node** root, int data);
+int deleteNode(Node** root, int data);
+Node* searchNode(Node* root, int data);
 
 //------------------------------------------------
 #endif

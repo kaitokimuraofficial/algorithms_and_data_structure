@@ -5,6 +5,34 @@ extern "C" {
 #include <gtest/gtest.h>
 #include <string>
 
+TEST(BinaryTreeTest, maxAndMin) {    
+    Tree *tree = createTree();
+    Node *root = createNode(1);
+    tree->root = root;
+
+    insertNode(&root, 2);
+    insertNode(&root, -5);
+    insertNode(&root, 6);
+    insertNode(&root, -1);
+
+    EXPECT_EQ(minNode(root), root->left);
+    EXPECT_EQ(maxNode(root), root->right->right);
+}
+
+TEST(BinaryTreeTest, searchNode) {    
+    Tree *tree = createTree();
+    Node *root = createNode(1);
+    tree->root = root;
+
+    insertNode(&root, 2);
+    insertNode(&root, -5);
+    insertNode(&root, 6);
+    insertNode(&root, -1);
+
+    EXPECT_EQ(searchNode(root, -1), root->left->right);
+    EXPECT_EQ(searchNode(root, 6), root->right->right);
+}
+
 TEST(BinaryTreeTest, insert) {    
     Tree *tree = createTree();
     Node *root = createNode(1);

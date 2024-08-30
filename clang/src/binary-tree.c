@@ -99,7 +99,6 @@ void postOrderTraversal(Node* root) {
     printf("\n");
 }
 
-
 // insert new node into binary tree
 int insertNode(Node**  root, int data) {
     if (*root == NULL) {
@@ -118,16 +117,11 @@ int insertNode(Node**  root, int data) {
     }
 }
 
-// delete node with data
-int deleteNode(Node** root, int data) {
-    return 1;
-}
-
 // search node in tree
-int searchNode(Node* root, int data) {
-    if (root == NULL) return -1;
+Node* searchNode(Node* root, int data) {
+    if (root == NULL) return NULL;
 
-    if (root->data == data) return 0;
+    if (root->data == data) return root;
 
     if (root->data > data) {
         return searchNode(root->left, data);
