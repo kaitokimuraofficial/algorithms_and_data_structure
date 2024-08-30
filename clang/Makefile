@@ -10,6 +10,10 @@ stack:					main.o stack.o singly-linked-list.o
 						gcc main.o stack.o singly-linked-list.o && ./a.out
 						make clean
 
+binary-tree:			main.o binary-tree.o
+						gcc main.o binary-tree.o && ./a.out
+						make clean
+
 main.o:					src/main.c
 						gcc -c src/main.c
 
@@ -21,6 +25,9 @@ doubly-linked-list.o:	src/doubly-linked-list.c
 
 stack.o:				src/stack.c
 						gcc -c src/stack.c
+
+binary-tree.o:			src/binary-tree.c
+						gcc -c src/binary-tree.c
 
 clean:;					rm -f *.o a.out
 

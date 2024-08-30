@@ -78,8 +78,19 @@ target_link_libraries(
   GTest::gtest_main
 )
 
+add_executable(
+  binary-tree-test
+  binary-tree-test.cc
+  ../src/binary-tree.c
+)
+target_link_libraries(
+  binary-tree-test
+  GTest::gtest_main
+)
+
 include(GoogleTest)
 gtest_discover_tests(singly-linked-list-test)
 gtest_discover_tests(doubly-linked-list-test)
 gtest_discover_tests(stack-test)
 gtest_discover_tests(queue-test)
+gtest_discover_tests(binary-tree-test)
